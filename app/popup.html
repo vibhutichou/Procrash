@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100" style="min-width: 400px">
+    <div class="container mx-auto p-4">
+      <div
+        id="loginForm"
+        class="w-full md:max-w-lg mx-auto bg-white rounded-lg shadow-lg p-8 mb-4"
+      >
+        <h2 class="text-2xl font-bold mb-4">Login</h2>
+        <form id="loginForm" class="space-y-4">
+          <div id="loginErrorMessage" class="text-red-500 hidden mb-2">
+            Invalid username or password
+          </div>
+          <input
+            type="text"
+            id="loginUsername"
+            placeholder="Username"
+            required
+            class="block w-full py-2 px-4 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+          />
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="Password"
+            required
+            class="block w-full py-2 px-4 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+          />
+          <button
+            type="submit"
+            class="w-full bg-indigo-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"
+          >
+            Login
+          </button>
+        </form>
+        <div class="mt-4 text-center">
+          <button
+            id="loadRegisterForm"
+            class="text-indigo-600 hover:text-indigo-800 focus:outline-none"
+          >
+            Register instead
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="registerForm"
+        class="w-full md:max-w-lg mx-auto bg-white rounded-lg shadow-lg p-8 mb-4 hidden"
+      >
+        <h2 class="text-2xl font-bold mb-4">Register</h2>
+        <form id="registerForm" class="space-y-4">
+          <div id="errorMessage" class="text-red-500 hidden mb-2">
+            Username already exists. Please choose another one.
+          </div>
+          <input
+            type="text"
+            id="registerUsername"
+            placeholder="Username"
+            required
+            class="block w-full py-2 px-4 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+          />
+          <input
+            type="password"
+            id="registerPassword"
+            placeholder="Password"
+            required
+            class="block w-full py-2 px-4 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+          />
+          <button
+            type="submit"
+            class="w-full bg-indigo-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"
+          >
+            Register
+          </button>
+        </form>
+        <div class="mt-4 text-center">
+          <button
+            id="backToLoginForm"
+            class="text-indigo-600 hover:text-indigo-800 focus:outline-none"
+          >
+            Back to Login
+          </button>
+        </div>
+      </div>
+
+      <div id="loggedInContent" style="display: none">
+        <button
+          id="logoutButton"
+          class="bg-red-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-red-600 focus:outline-none focus:bg-red-600"
+        >
+          Logout
+        </button>
+
+        <div class="header">
+          <h1 class="text-3xl font-bold mb-4">ProCrash</h1>
+          <p id="user"></p>
+        </div>
+        <p id="opened_website" class="text-gray-700"></p>
+        <p id="website_category" class="text-gray-500"></p>
+        <p id="time_spent" class="text-gray-700"></p>
+        <label class="inline-flex items-center mb-5 cursor-pointer">
+          <input type="checkbox" id="categoryToggle" class="sr-only peer" />
+          <div
+            class="relative w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-0 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-purple-600"
+          ></div>
+          <span
+            class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300"
+          ></span>
+        </label>
+      </div>
+    </div>
+    <button id="toggleButton">Start</button>
+  <h1>Distracting Words</h1>
+  <div id="distracting-words-count"></div>
+  <div id="distracting-words-list"></div>
+  <script src="popup.js"></script>
+
+  
+    <a class="px-4 py-2 bg-purple-600 text-center flex justify-center items-center text-white font-medium " href="index.html" target="_blank">Dashboard</a>
+    
+    <script src="w_check.js"></script>
+    <script src="script.js"></script>
+    
+  </body>
+</html>
